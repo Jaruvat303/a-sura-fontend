@@ -4,9 +4,8 @@ import axios from "axios";
 
 const fetchBlogs = async () => {
   try {
-    const responce = await axios.get(
-      `${process.env.STRAPI_BASE_URL}/api/blogs`
-    );
+    const responce = await axios.get(`${process.env.STRAPI_BASE_URL}/api/blogs`);
+    console.log("responce", responce.data.data);
     return responce.data.data;
   } catch (error) {
     console.log("error", error);
